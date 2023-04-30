@@ -11,7 +11,7 @@ const Cart = () => {
         return acc + (item.price + item.quantity)
     }, 0)
     setTotal(total)
-  }, [carts])
+  })
 
   const handleInc = (id) => {
     const updatedCart = carts.map(item => {
