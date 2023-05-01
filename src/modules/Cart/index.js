@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 const Cart = () => {
-  const carts = JSON.parse(localStorage.getItem("cart")) || [];
+  const carts = useMemo(() => JSON.parse(localStorage.getItem("cart")) || [], []);
+
   const navigate = useNavigate()
   const [total, setTotal] = useState(0)
 
